@@ -34,12 +34,12 @@ $('.first').click(function() {
 		$('#top').html("<h1> You killed the trolls without taking damage -0HP </h1>" +
 		"<p> Hit Points: " + hit_points + " remaining.</p>");
 		}
-			
+
 	else {
 		hit_points-=1;
 		$('#top').html("<h1> You killed the trolls, but you took some damage -1HP </h1>" +
 		"<p> Hit Points: "+	hit_points + " remaining.</p>");
-		}	
+		}
 	});
 
 
@@ -51,7 +51,7 @@ $('.first').click(function() {
 		}
 		else {
 			hit_points-=2;
-			$('#top').html("You took damage without any defending equipment -2HP </h1>" +    
+			$('#top').html("You took damage without any defending equipment -2HP </h1>" +
       		"<p> Hit Points: "+	hit_points + " remaining.</p>");
 		}
 	});
@@ -59,7 +59,7 @@ $('.first').click(function() {
 	$('.second').click(function() {
 		$('#bottom').html("<p>You encounter the boss!</p>" +
 		"<button class = 'btn' id = 'run'> Run! </button>" +
-		"<button class = 'btn' id = 'fight'> Fight! </button>");	
+		"<button class = 'btn' id = 'fight'> Fight! </button>");
 
 		$('#fight').click( function() {
 		if (weapon === 'sword') {
@@ -69,27 +69,21 @@ $('.first').click(function() {
 			hit_points -= 2;
 		}
 		if (hit_points > 0) {
-      		$('#top').html("<h1>You saved the princess and gained the goblet! Congratulation</h1>");
+      		$('#top').html("<h1>You saved the princess and gained the goblet! Congratulations</h1>");
       		$('#bottom').html("");
-    	} 
+    	}
     	else {
       		$('#top').html("<h1>You're dead. GAME OVER!</h1>");
       		$('#bottom').html("");
-      	}  
+      	}
 		});
 
 		$('#run').click( function() {
 		$('#top').html("<h1> You abandoned the princess. The game is over. </h1>");
 		$('#bottom').html("");
-	
+
 		});
 
 	});
 
 });
-
-
-
-
-	
-

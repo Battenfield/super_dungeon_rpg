@@ -10,9 +10,9 @@ body {
 }
 
 #sword:hover, #bow:hover, #flank:hover, #assault:hover, #defend:hover, #right:hover, #fight:hover, #run:hover {
-  color: rgb(250, 250, 250);
+  color: rgb(245, 245, 245);
 }
 
 img {
-  margin: 5%;
+  margin: 3%;
 }
