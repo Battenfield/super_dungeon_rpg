@@ -14,10 +14,11 @@ $('#bow').click(function() {
 	});
 
 $('.first').click(function() {
+  var weaponIsSword = weapon === 'sword';
+	var killedTrolls = "<h1> You killed the trolls without taking damage -0HP </h1>" +
+	"<p> Hit Points: " + hit_points + " remaining.</p>";
 	$('h1').text("You have chosen a " + weapon);
 	$('#top > p').text("You have decided to go to the dungeon to save the princess and gain the goblet of immortality.");
-  var killedTrolls = "<h1> You killed the trolls without taking damage -0HP </h1>" +
-	"<p> Hit Points: " + hit_points + " remaining.</p>";
 	$('#bottom').html("<p>You're in Transylvania and you find the entrance to the dungeon. It looks uninviting.</p>" +
   	"<p> You are walking through a corridor. All of a sudden, you got ambushed by two trolls from both sides.</p>" +
   	"<p>What do you do?</p>" +
@@ -30,7 +31,7 @@ $('.first').click(function() {
 	});
 
 	$('#assault').click(function() {
-	if (weapon === 'sword') {
+	if (weaponIsSword) {
 		$('#top').html(killedTrolls);
 		}
 
@@ -42,7 +43,7 @@ $('.first').click(function() {
 
 
 	$('#defend').click(function() {
-		if (weapon === 'sword') {
+		if (weaponIsSword) {
 			hit_points-=1;
 			$('#top').html(killedTrolls);
 		}
@@ -58,7 +59,7 @@ $('.first').click(function() {
 		"<button class = 'btn' id = 'fight'> Fight! </button>");
 
 		$('#fight').click( function() {
-		if (weapon === 'sword') {
+		if (weaponIsSword) {
 			hit_points -= 1;
 		}
 		else {
