@@ -16,7 +16,8 @@ $('#bow').click(function() {
 $('.first').click(function() {
 	$('h1').text("You have chosen a " + weapon);
 	$('#top > p').text("You have decided to go to the dungeon to save the princess and gain the goblet of immortality.");
-
+  var killedTrolls = "<h1> You killed the trolls without taking damage -0HP </h1>" +
+	"<p> Hit Points: " + hit_points + " remaining.</p>";
 	$('#bottom').html("<p>You're in Transylvania and you find the entrance to the dungeon. It looks uninviting.</p>" +
   	"<p> You are walking through a corridor. All of a sudden, you got ambushed by two trolls from both sides.</p>" +
   	"<p>What do you do?</p>" +
@@ -25,20 +26,17 @@ $('.first').click(function() {
   	"<button class = 'second btn' id = 'defend'> Defend </button>");
 
     $('#flank').click(function() {
-		$('#top').html("<h1> You killed the trolls without taking damage -0HP </h1>" +
-		"<p> Hit Points: " + hit_points + " remaining.</p>");
+		$('#top').html(killedTrolls);
 	});
 
 	$('#assault').click(function() {
 	if (weapon === 'sword') {
-		$('#top').html("<h1> You killed the trolls without taking damage -0HP </h1>" +
-		"<p> Hit Points: " + hit_points + " remaining.</p>");
+		$('#top').html(killedTrolls);
 		}
 
 	else {
 		hit_points-=1;
-		$('#top').html("<h1> You killed the trolls, but you took some damage -1HP </h1>" +
-		"<p> Hit Points: "+	hit_points + " remaining.</p>");
+		$('#top').html(killedTrolls);
 		}
 	});
 
@@ -46,13 +44,11 @@ $('.first').click(function() {
 	$('#defend').click(function() {
 		if (weapon === 'sword') {
 			hit_points-=1;
-			$('#top').html("<h1> You took some damage, but you took a long while to kill the trolls -1HP </h1>" +
-			"<p> Hit Points: "+	hit_points + " remaining.</p>");
+			$('#top').html(killedTrolls);
 		}
 		else {
 			hit_points-=2;
-			$('#top').html("You took damage without any defending equipment -2HP </h1>" +
-      		"<p> Hit Points: "+	hit_points + " remaining.</p>");
+			$('#top').html(killedTrolls);
 		}
 	});
 
